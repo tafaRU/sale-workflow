@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 ##############################################################################
 #
-#    Copyright (C) 2014 Agile Business Group sagl
+#    Copyright (C) 2014-15 Agile Business Group sagl
 #    (<http://www.agilebg.com>)
 #    @author Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 #
@@ -21,27 +21,13 @@
 ##############################################################################
 {
     'name': "Easing properties input in sale order line",
-    'version': '0.1',
+    'version': '1.0',
     'category': '',
-    'description': """
-This modules simplifies the input of properties in the sale order line and
-other places.
-
-For instance, in the many2many field 'property_ids', it allows the user to
-digit 'width 0.5' and the system will automatically create a property of group
-'width' with value '0.5'
-
-It also adds the model 'mrp.property.formula', to be used by computations based
-on properties.
-Used by modules like 'sale_line_price_properties_based' and
-'sale_line_quantity_properties_based'
-""",
     'author': "Agile Business Group,Odoo Community Association (OCA)",
     'website': 'http://www.agilebg.com',
     'license': 'AGPL-3',
     "depends": [
-        'sale_stock',
-        'mrp',
+        'sale_mrp',
     ],
     "data": [
         'security/ir.model.access.csv',
