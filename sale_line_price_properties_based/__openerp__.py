@@ -37,8 +37,5 @@
     "demo": [
         'product_demo.xml',
     ],
-    "test": [
-        'test/sale_order.yml',
-    ],
     "installable": True
 }
