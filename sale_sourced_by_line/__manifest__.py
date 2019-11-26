@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2013-2014 Camptocamp SA - Guewen Baconnier
 # © 2016-17 Eficent Business and IT Consulting Services S.L.
 # © 2016 Serpent Consulting Services Pvt. Ltd.
@@ -7,7 +6,7 @@
 {
     'name': 'Sale Sourced by Line',
     'summary': 'Multiple warehouse source locations for Sale order',
-    'version': '10.0.1.0.0',
+    'version': '12.0.1.0.0',
     "author": "Camptocamp,"
               "Eficent,"
               "SerpentCS,"

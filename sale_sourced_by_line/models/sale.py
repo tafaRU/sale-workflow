@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2013-2014 Camptocamp SA - Guewen Baconnier
 # © 2016 Eficent Business and IT Consulting Services S.L.
 # © 2016 Serpent Consulting Services Pvt. Ltd.
@@ -23,7 +22,6 @@ class SaleOrder(models.Model):
     warehouse_id = fields.Many2one(
         'stock.warehouse',
         string='Default Warehouse',
-        readonly=True,
         states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},
         help="If no source warehouse is selected on line, "
              "this warehouse is used as default. ")
@@ -35,7 +33,6 @@ class SaleOrderLine(models.Model):
     warehouse_id = fields.Many2one(
         'stock.warehouse',
         'Source Warehouse',
-        readonly=True,
         states={'draft': [('readonly', False)], 'sent': [('readonly', False)]},
         help="If a source warehouse is selected, "
              "it will be used to define the route. "

@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 # Copyright 2013-2014 Camptocamp SA - Guewen Baconnier
 # © 2016 Eficent Business and IT Consulting Services S.L.
 # © 2016 Serpent Consulting Services Pvt. Ltd.
@@ -40,11 +39,11 @@ class TestSaleSourcedByLine(TransactionCase):
         })
         # confirm quotation
         so.action_confirm()
-        self.assertEquals(len(so.picking_ids), 2,
+        self.assertEqual(len(so.picking_ids), 2,
                           "2 delivery orders expected. Got %s instead" %
                           len(so.picking_ids))
         for line in so.order_line:
-            self.assertEquals(line.procurement_group_id.name,
+            self.assertEqual(line.procurement_group_id.name,
                               line.order_id.name + '/' +
                               line.warehouse_id.name,
                               "The name of the procurement group is not "
@@ -53,12 +52,12 @@ class TestSaleSourcedByLine(TransactionCase):
                 moves = self.stock_move_model.search([('procurement_id', '=',
                                                        procurement.id)])
                 for move in moves:
-                    self.assertEquals(move.group_id,
+                    self.assertEqual(move.group_id,
                                       line.procurement_group_id,
                                       "The group in the stock move does not "
                                       "match with the procurement group in "
                                       "the sales order line.")
-                    self.assertEquals(move.picking_id.group_id,
+                    self.assertEqual(move.picking_id.group_id,
                                       line.procurement_group_id,
                                       "The group in the stock picking does "
                                       "not match with the procurement group "
@@ -81,7 +80,7 @@ class TestSaleSourcedByLine(TransactionCase):
         })
         # confirm quotation
         so.action_confirm()
-        self.assertEquals(len(so.picking_ids), 1,
+        self.assertEqual(len(so.picking_ids), 1,
                           "1 delivery order expected. Got %s instead" %
                           len(so.picking_ids))
 
@@ -105,7 +104,7 @@ class TestSaleSourcedByLine(TransactionCase):
         so.action_confirm()
         for line in so.order_line:
             for procurement in line.procurement_ids:
-                self.assertEquals(procurement.warehouse_id,
+                self.assertEqual(procurement.warehouse_id,
                                   line.warehouse_id,
                                   "The warehouse in the procurement does not "
                                   "match with the Sales order line.")
